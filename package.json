@@ -1,7 +1,7 @@
 {
   "name": "vue-numkeyboard",
   "description": "vue number keyboard for mobile",
-  "version": "1.0.0",
+  "version": "1.2.0",
   "author": "bruce.jcw@gmail.com",
   "scripts": {
     "dev": "npm run generate-icons && cross-env NODE_ENV=development webpack-dev-server --open --hot",
