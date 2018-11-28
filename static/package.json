@@ -13,14 +13,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/brucejcw/vue-numkeyboard.git"
+    "url": "git+https://github.com/thequiet/vue-numkeyboard.git"
   },
   "keywords": [
     "vue",
     "keyboard"
   ],
   "bugs": {
-    "url": "https://github.com/brucejcw/vue-numkeyboard/issues"
+    "url": "https://github.com/thequiet/vue-numkeyboard/issues"
   },
   "license": "MIT"
 }

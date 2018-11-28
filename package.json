@@ -59,7 +59,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/brucejcw/numkeyboard.git"
+    "url": "git+https://github.com/thequiet/numkeyboard.git"
   },
   "keywords": [
     "vue",
@@ -67,7 +67,7 @@
   ],
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/brucejcw/numkeyboard/issues"
+    "url": "https://github.com/thequiet/numkeyboard/issues"
   },
-  "homepage": "https://github.com/brucejcw/numkeyboard#readme"
+  "homepage": "https://github.com/thequiet/numkeyboard#readme"
 }
