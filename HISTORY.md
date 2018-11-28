@@ -1,3 +1,6 @@
+## 1.2.0 (2018.11.27)
+- Add default, min, max and background, label, overlay and input anchored. Update styles.
+
 ## 1.1.2 (2017.08.30)
 - change keyboard number order, start with 123, instead of 789
 

@@ -1,5 +1,7 @@
 <template>
   <div :class="['keyboard', { hidden: !show}]">
+    <div class="background-smoke"></div>
+    <div class="input-anchored">{{ value }}</div>
     <table v-touch:tap="typing" v-touch:long="longTab">
       <tbody>
         <tr>
@@ -36,7 +38,7 @@ export default {
 
   name: 'keyboard',
 
-  props: ['show', 'point', 'activeOk', 'okText'],
+  props: ['show', 'point', 'activeOk', 'okText', 'value'],
 
   methods: {
     typing (e) {

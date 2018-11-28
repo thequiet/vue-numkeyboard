@@ -2,11 +2,12 @@
 <div class="numKeyboardInput">
   <div ref="keyboardInput" :class="['keyboard-input', { 'keyboard-focus': showKeyboard }, textAlign]" @click="focus">
     <!-- wrapper value with span, easy to calc elem length -->
+    <div class="has-text-weight-heavy" v-if="inputLabel">{{ inputLabel }}</div>
     <span v-if="placeholder && value === ''" class="placeholder">{{ placeholder }}</span>
     <span v-else class="input-value">{{ value }}</span>
     <numkeyboard-icon name="clear" @click.native="clear" v-show="showClear && showKeyboard && value"></numkeyboard-icon>
   </div>
-  <keyboard ref="keyboard" @typing="typing" :show="showKeyboard" :activeOk="!!value" :point="point" :ok-text="okText"></keyboard>
+  <keyboard ref="keyboard" @typing="typing" :show="showKeyboard" :activeOk="!!value" :point="point" :ok-text="okText" :value="value"></keyboard>
 </div>
 </template>
 
@@ -35,6 +36,24 @@ export default {
     'point': {
       type: Boolean,
       default: true
+    },
+    /**
+     * Default value for reset
+     * {boolean} - optional
+     * default - ''
+     */
+    'resetValue': {
+      type: [String, Number],
+      default: ''
+    },
+    /**
+     * Show label for this input
+     * {boolean} - optional
+     * default - true
+     */
+    'inputLabel': {
+      type: String,
+      default: ''
     },
     /**
      * v-model value
@@ -86,6 +105,8 @@ export default {
         this.$emit('input', mutableValue)
       } else if (code === 'F' || code === 'K') { // fold or ok
         this.blur()
+        if (!mutableValue)
+          this.$emit('input', 0);
         this.$emit('onOk', mutableValue)
       } else if (/[0-9\.]/.test(code)) { // normal input
         mutableValue += code
@@ -111,7 +132,7 @@ export default {
     },
 
     clear () {
-      this.$emit('input', '')
+      this.$emit('input', this.resetValue)
     },
 
     /**
